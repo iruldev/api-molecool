@@ -29,4 +29,5 @@ The Lumen framework is open-sourced software licensed under the [MIT license](ht
 5. Press i for insert
 6. And add, \* \* \* \* \* php /your_path/api-molecool/artisan schedule:run >> /dev/null 2>&1
 7. Press esc and :wq for save and exit
-8. Done
+8. Import API MOLECOOL.postman_collection.json in postman
+9. Done

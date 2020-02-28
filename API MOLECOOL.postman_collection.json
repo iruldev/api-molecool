@@ -1,0 +1,616 @@
+{
+	"info": {
+		"_postman_id": "e5698e97-2d2f-475e-b359-2957a25c8ab9",
+		"name": "API MOLECOOL",
+		"description": "Back End Developer Technical Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "irulsetyo",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "khoirul.setyo@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "admin",
+									"value": "0",
+									"description": "Menentukan Admin atau Tidak | TRUE or FALSE, default FALSE",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "1234567",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "khoirul.dev@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234567",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "List Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGktbW9sZWNvb2wubG9jXC9sb2dpbiIsImlhdCI6MTU4MjczMjMwMiwiZXhwIjoxNTgyNzM1OTAyLCJuYmYiOjE1ODI3MzIzMDIsImp0aSI6IldVZThFRXBnbDc5VWRYMDEiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.9_r7--kuIS6uJmjzhytV4X6h3K_H7M940hNAhu_VTc4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9wbGFzdGljcGF5LmxvY1wvYXBpXC9sb2dpbiIsImlhdCI6MTU4MTkzNzA1MywiZXhwIjoxNTgxOTQwNjUzLCJuYmYiOjE1ODE5MzcwNTMsImp0aSI6IlpLY3AxYWFxa2dpZ3duU1IiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.U971LiO4J9U0EJvMTnINSTtMcbK9GwXAOEGhNxq-S6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "irul",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "irul@gmail..com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9wbGFzdGljcGF5LmxvY1wvYXBpXC9sb2dpbiIsImlhdCI6MTU4MTkzNzA1MywiZXhwIjoxNTgxOTQwNjUzLCJuYmYiOjE1ODE5MzcwNTMsImp0aSI6IlpLY3AxYWFxa2dpZ3duU1IiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.U971LiO4J9U0EJvMTnINSTtMcbK9GwXAOEGhNxq-S6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Articles",
+			"item": [
+				{
+					"name": "List Articles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGktbW9sZWNvb2wubG9jXC9hcGlcL2xvZ2luIiwiaWF0IjoxNTgyODI2MDQxLCJleHAiOjE1ODI4Mjk2NDEsIm5iZiI6MTU4MjgyNjA0MSwianRpIjoiMGUzZHM1cDRPOERDY0ROeSIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Dy7fClR5LWXa3kobOQFzqKQDNa88rcksxUr0NJYuXfE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/articles",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"articles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGktbW9sZWNvb2wubG9jXC9hcGlcL2xvZ2luIiwiaWF0IjoxNTgyOTA1MDAzLCJleHAiOjE1ODI5MDg2MDMsIm5iZiI6MTU4MjkwNTAwMywianRpIjoiMUs5bGNlbUdvYkVHY0ZtNiIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.GMxlkTPuE52MztbTAPPiZ9LpOeMlH3SVzPw3jXo8OpQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/article/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"article",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGktbW9sZWNvb2wubG9jXC9hcGlcL2xvZ2luIiwiaWF0IjoxNTgyNzkwNzMzLCJleHAiOjE1ODI3OTQzMzMsIm5iZiI6MTU4Mjc5MDczMywianRpIjoialN2MDN3UkRTeGdaRmNpYSIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Sk6PuV-IJq9EQW4VZbrryvKGSxDL3onPyx1pwrpbRSI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Ribuan Ojek Online Gelar Demo ke Kantor Budi Karya",
+									"description": "tipe String",
+									"type": "text"
+								},
+								{
+									"key": "summary",
+									"value": "Ribuan Ojek Online Gelar Demo ke Kantor Budi Karya",
+									"description": "tipe Text",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "<p>VIVAnews - Hampir 5 ribu pengemudi ojek online diperkirakan bakal menggelar aksi demonstrasi yang akan terkonsentrasi di kantor Kementerian Perhubungan dan Istana Kepresidenan, hari ini. Mereka menuntut dua poin yakni meminta adanya payung hukum operasional kepada pemerintah dan evaluasi tarif.<br> <br> <br> \"Nanti siang sekitar pukul 13:00. Estimasi massa sekitar 5 ribu orang yang datang dari berbagai daerah,\" kata Presidium Gabungan Transportasi Roda Dua (Garda) Igun Wicaksono kepada wartawan, Rabu 15 Januari 2020.<br> <br> Igun menjelaskan, bahwa legalitas atau pengakuan keberadaan Ojek Online dalam sebuah aturan akan menguatkan posisi si pengemudi. Ia berharap, tuntutan ini benar - benar diperhatikan pemerintah.<br> <br> <br> \"Jika driver Ojol (Ojek Online) sudah punya legalitas maka driver ojol sudah punya kekuatan hukum untuk membela diri secara legalitas,\" kata dia.<br> <br> <br> Sebelumnya diberitakan, Kapolres Metro Jakarta Pusat Komisaris Besar Polisi Heru Novianto menyebutkan, akses Jalan Medan Merdeka Barat, Jakarta akan ditutup lantaran demo pengemudi ojek online (ojol), di depan Kantor Kementerian Perhubungan dan Istana Negara, Rabu, 15 Januari 2020.<br> <br> Sebab, massa aksi diyakini akan memakan semua badan jalan. Alhasil, lalu lintas di sana pun dialihkan. Rencananya aksi akan dimulai sekira pukul 12.00 WIB. Namun, untuk bus TransJakarta diupayakan tetap bisa melintas.<br> <br> <br> Eduward Ambarita<br> <br> <!--/data/user/0/com.samsung.android.app.notes/files/clipdata/clipdata_200115_134125_568.sdoc--></p>",
+									"description": "tipe Text",
+									"type": "text"
+								},
+								{
+									"key": "channel",
+									"value": "gosip",
+									"description": "tipe String",
+									"type": "text"
+								},
+								{
+									"key": "subchannel",
+									"value": "dangdut",
+									"description": "tipe String",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "ojek, demo, ojek online",
+									"description": "tipe Json (pisahkan dangan koma) ",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"description": "Select Image",
+									"type": "file",
+									"src": "/Users/irulgan/Downloads/59785c7610fb6-blank-profile-man-untuk-one-pride-mma.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/article",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"article"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGktbW9sZWNvb2wubG9jXC9hcGlcL2xvZ2luIiwiaWF0IjoxNTgyNzgxMTUwLCJleHAiOjE1ODI3ODQ3NTAsIm5iZiI6MTU4Mjc4MTE1MCwianRpIjoiZ3VwdmEwd2ZKZlE0eWliTyIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.wNwJK3kfTUs0AZJfgToN85QGnnzMQ7aXOeBwUhyqtW0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Ribuan Ojek Online Gelar Demo",
+									"description": "tipe String",
+									"type": "text"
+								},
+								{
+									"key": "summary",
+									"value": "Ribuan Ojek Online Gelar Demo ke Kantor Budi Karya",
+									"description": "tipe Text",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "body",
+									"value": "<p>VIVAnews - Hampir 5 ribu pengemudi ojek online diperkirakan bakal menggelar aksi demonstrasi yang akan terkonsentrasi di kantor Kementerian Perhubungan dan Istana Kepresidenan, hari ini. Mereka menuntut dua poin yakni meminta adanya payung hukum operasional kepada pemerintah dan evaluasi tarif.<br> <br> <br> \"Nanti siang sekitar pukul 13:00. Estimasi massa sekitar 5 ribu orang yang datang dari berbagai daerah,\" kata Presidium Gabungan Transportasi Roda Dua (Garda) Igun Wicaksono kepada wartawan, Rabu 15 Januari 2020.<br> <br> Igun menjelaskan, bahwa legalitas atau pengakuan keberadaan Ojek Online dalam sebuah aturan akan menguatkan posisi si pengemudi. Ia berharap, tuntutan ini benar - benar diperhatikan pemerintah.<br> <br> <br> \"Jika driver Ojol (Ojek Online) sudah punya legalitas maka driver ojol sudah punya kekuatan hukum untuk membela diri secara legalitas,\" kata dia.<br> <br> <br> Sebelumnya diberitakan, Kapolres Metro Jakarta Pusat Komisaris Besar Polisi Heru Novianto menyebutkan, akses Jalan Medan Merdeka Barat, Jakarta akan ditutup lantaran demo pengemudi ojek online (ojol), di depan Kantor Kementerian Perhubungan dan Istana Negara, Rabu, 15 Januari 2020.<br> <br> Sebab, massa aksi diyakini akan memakan semua badan jalan. Alhasil, lalu lintas di sana pun dialihkan. Rencananya aksi akan dimulai sekira pukul 12.00 WIB. Namun, untuk bus TransJakarta diupayakan tetap bisa melintas.<br> <br> <br> Eduward Ambarita<br> <br> <!--/data/user/0/com.samsung.android.app.notes/files/clipdata/clipdata_200115_134125_568.sdoc--></p>",
+									"description": "tipe Text",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "channel",
+									"value": "gosip",
+									"description": "tipe String",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "subchannel",
+									"value": "dangdut",
+									"description": "tipe String",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "tags",
+									"value": "ojek, demo, ojek online",
+									"description": "tipe Json (pisahkan dangan koma) ",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"description": "Select Image",
+									"type": "file",
+									"src": "/Users/irulgan/Downloads/59785c7610fb6-blank-profile-man-untuk-one-pride-mma.jpg",
+									"disabled": true
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/article/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"article",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comment Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGktbW9sZWNvb2wubG9jXC9hcGlcL2xvZ2luIiwiaWF0IjoxNTgyODg2MjQ1LCJleHAiOjE1ODI4ODk4NDUsIm5iZiI6MTU4Mjg4NjI0NSwianRpIjoiTldwQUV5YUdxUmhqTUpjNiIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.D6vlcbu7ylEpNJT4-bQLTRJ0ZfyzOXCmE6gzFdOj-3I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "article yang bagus",
+									"description": "Sting",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/comment/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"comment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Article",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGktbW9sZWNvb2wubG9jXC9hcGlcL2xvZ2luIiwiaWF0IjoxNTgyNzg1MDg0LCJleHAiOjE1ODI3ODg2ODQsIm5iZiI6MTU4Mjc4NTA4NCwianRpIjoiRjh2anBpZE52c1k5WTIwdSIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.I9D3rPd5w-5meVZAWGjtw-lGFzrZ-fyCPmZrrEwdrDM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/article/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"article",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Test API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0c2e823d-9a70-44c1-86c8-ff68663fcb20",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7d3f0671-39cc-4ae6-a6c4-36563c9b4cfe",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "dc68a6f9-7763-4c2c-b63c-de77476e35a8",
+			"key": "url",
+			"value": "http://api-molecool.loc",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
