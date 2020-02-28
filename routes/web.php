@@ -15,21 +15,28 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-// API route group
-$router->group(['prefix' => 'api'], function () use ($router) {
-    // Matches "/api/register
-    $router->post('register', 'AuthController@register');
 
-    // Matches "/api/login
+$router->group(['prefix' => 'api'], function () use ($router) {
+
+    // Route Auth
+    $router->post('register', 'AuthController@register');
     $router->post('login', 'AuthController@login');
 
-    // Matches "/api/users
-    $router->get('users', 'UserController@allUsers');
+    $router->group(['middleware' => ['auth']], function () use ($router) {
+        // Route Comment
+        $router->post('comment/{article_id}', 'ArticleController@comment');
 
-    // Matches "/api/profile
-    $router->put('profile', 'UserController@profile');
+        $router->group(['middleware' => ['admin']], function () use ($router) {
+            // Route Users
+            $router->get('users', 'UserController@allUsers');
+            $router->put('profile', 'UserController@profile');
+            $router->delete('users/{id}', 'UserController@singleUser');
 
-    // Matches "/api/users/1
-    //get one user by id
-    $router->delete('users/{id}', 'UserController@singleUser');
+            // Route Article
+            $router->get('articles', 'ArticleController@index');
+            $router->post('article', 'ArticleController@store');
+            $router->put('article/{id}', 'ArticleController@update');
+            $router->delete('article/{id}', 'ArticleController@destroy');
+        });
+    });
 });
