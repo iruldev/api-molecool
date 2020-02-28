@@ -19,3 +19,14 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 ## License
 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Installation
+
+1. Rename .env.example to .env
+2. Run, composer install
+3. Run, php artisan migrate
+4. Run, crontab -e
+5. Press i for insert
+6. And add, \* \* \* \* \* php /your_path/api-molecool/artisan schedule:run >> /dev/null 2>&1
+7. Press esc and :wq for save and exit
+8. Done
