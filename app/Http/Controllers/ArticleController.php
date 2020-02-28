@@ -15,6 +15,18 @@ class ArticleController extends Controller
         return response()->json(['Articles' =>  Article::paginate(10)], 200);
     }
 
+    public function show($id)
+    {
+        try {
+            $article = Article::findOrFail($id);
+            $comments = $article->comments;
+
+            return response()->json(['article' => $article], 200);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Article not found!'], 404);
+        }
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [

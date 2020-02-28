@@ -26,6 +26,9 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         // Route Comment
         $router->post('comment/{article_id}', 'ArticleController@comment');
 
+        // Route Detail
+        $router->get('article/{id}', 'ArticleController@show');
+
         $router->group(['middleware' => ['admin']], function () use ($router) {
             // Route Users
             $router->get('users', 'UserController@allUsers');
